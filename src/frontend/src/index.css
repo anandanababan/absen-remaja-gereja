@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque[opsz,wdth,wght].woff2")
+    format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans[wght].woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0.98 0.012 85;
+    --foreground: 0.22 0.04 55;
+    --card: 1 0 0;
+    --card-foreground: 0.22 0.04 55;
+    --popover: 1 0 0;
+    --popover-foreground: 0.22 0.04 55;
+    --primary: 0.68 0.16 52;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.95 0.02 85;
+    --secondary-foreground: 0.35 0.06 55;
+    --muted: 0.95 0.01 80;
+    --muted-foreground: 0.55 0.04 70;
+    --accent: 0.88 0.08 75;
+    --accent-foreground: 0.3 0.06 55;
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 1 0 0;
+    --border: 0.9 0.02 80;
+    --input: 0.9 0.02 80;
+    --ring: 0.68 0.16 52;
+    --radius: 0.75rem;
+    --chart-1: 0.68 0.16 52;
+    --chart-2: 0.6 0.14 200;
+    --chart-3: 0.65 0.18 35;
+    --chart-4: 0.72 0.12 160;
+    --chart-5: 0.58 0.16 300;
+    --sidebar: 0.98 0.012 85;
+    --sidebar-foreground: 0.22 0.04 55;
+    --sidebar-primary: 0.68 0.16 52;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.95 0.02 85;
+    --sidebar-accent-foreground: 0.35 0.06 55;
+    --sidebar-border: 0.9 0.02 80;
+    --sidebar-ring: 0.68 0.16 52;
+    --pin-glow: oklch(0.68 0.16 52 / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    background-image: radial-gradient(
+        ellipse at 20% 10%,
+        oklch(0.92 0.06 75 / 0.35) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse at 80% 90%,
+        oklch(0.9 0.06 55 / 0.25) 0%,
+        transparent 60%
+      );
+    min-height: 100vh;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+.pin-display {
+  font-family: "Geist Mono", "JetBrains Mono", monospace;
+  letter-spacing: 0.2em;
+}
+
+.card-warm {
+  background: oklch(1 0 0 / 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid oklch(0.9 0.04 75);
+  box-shadow: 0 1px 3px oklch(0.68 0.16 52 / 0.08), 0 8px 32px
+    oklch(0.68 0.16 52 / 0.06);
+}
+
+.btn-primary-warm {
+  background: linear-gradient(135deg, oklch(0.7 0.18 52), oklch(0.62 0.18 40));
+  box-shadow: 0 4px 14px oklch(0.68 0.16 52 / 0.35);
+  transition: all 0.2s ease;
+}
+.btn-primary-warm:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px oklch(0.68 0.16 52 / 0.45);
+}
+.btn-primary-warm:active {
+  transform: translateY(0);
+}
